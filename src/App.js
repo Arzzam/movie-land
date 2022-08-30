@@ -1,3 +1,7 @@
+//   First of all when the page refresh the searchMovies function will set to spiderman
+// and then list the spiderman movies and then when we search for movies and the value is noted by function
+// and when the button is clicked then searchMovies is set as current movie and render the data from the api
+
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import MovieCard from "./Components/MovieCard";
@@ -15,7 +19,6 @@ const App = () => {
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
-
     setmovies(data.Search);
   };
   useEffect(() => {
